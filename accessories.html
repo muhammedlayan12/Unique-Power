@@ -489,7 +489,7 @@
                                         </form>                            
                                     </div>
                                     <div class="woocommerce-content-inner">
-                                        <ul id="solarCharger" class="products three-column clearfix">
+                                        <ul id="accessories" class="products three-column clearfix">
                                            
                                             
                                            
@@ -901,14 +901,14 @@
 }
 
             async function fetchSanityData() {
-    const query = encodeURIComponent('*[_type=="solarCharger"]{_id,name,price,description,stock,image}');
+    const query = encodeURIComponent('*[_type=="accessories"]{_id,name,price,description,stock,image}');
     const url = `https://${projectId}.api.sanity.io/v2021-06-07/data/query/${dataset}?query=${query}`;
 
     try {
         const response = await fetch(url);
         const { result } = await response.json();
 
-        document.getElementById("solarCharger").innerHTML = result
+        document.getElementById("accessories").innerHTML = result
             .map(post => `
             <li class="product">
                 <div class="product-holder">

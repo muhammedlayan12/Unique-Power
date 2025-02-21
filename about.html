@@ -6,7 +6,7 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Radios - Electronics Store WooCommerce Template</title>
+        <title>Unique Power - Solar Inverter</title>
         <link rel="shortcut icon" href="assets/img/favicon.png" type="images/x-icon"/>
         <!-- css include -->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -259,6 +259,7 @@
            
             
 
+          
              <!-- slide-bar start -->
         <aside class="slide-bar">
             <div class="close-mobile-menu">
@@ -373,6 +374,10 @@
                     </li> -->
                     <li >
                         <a href="about.html">About</a>
+                        
+                    </li>
+                    <li >
+                        <a href="accessories.html">Accessories</a>
                         
                     </li>
                     <li><a href="contact.html">Contact</a></li>
@@ -669,5 +674,128 @@
         <script src="assets/js/jquery.magnific-popup.min.js"></script>
         <script src="assets/js/metisMenu.min.js"></script>
         <script src="assets/js/main.js"></script>
+        <script>
+            const projectId = "yftyosth"; 
+            const dataset = "production"; 
+        
+            function getImageUrl(image) {
+                return image?.asset?._ref
+                    ? `https://cdn.sanity.io/images/${projectId}/${dataset}/${image.asset._ref.replace('image-', '').replace('-jpg', '.jpg').replace('-png', '.png')}`
+                    : 'fallback-image.jpg';
+            }
+            function getImageUrlCart(image) {
+    if (!image || !image.asset || !image.asset._ref) {
+        return 'fallback-image.jpg';
+    }
+    return `https://cdn.sanity.io/images/${projectId}/${dataset}/${image.asset._ref.replace('image-', '').replace('-jpg', '.jpg').replace('-png', '.png')}`;
+}
+
+            async function fetchSanityData() {
+    const query = encodeURIComponent('*[_type=="ups"]{_id,name,price,description,stock,image}');
+    const url = `https://${projectId}.api.sanity.io/v2021-06-07/data/query/${dataset}?query=${query}`;
+
+    try {
+        const response = await fetch(url);
+        const { result } = await response.json();
+
+        document.getElementById("ups").innerHTML = result
+            .map(post => `
+            <li class="product">
+                <div class="product-holder">
+                    <img src="${getImageUrl(post.image)}" alt="${post.name}">
+                    <ul class="product__action">
+                        <li><a href="#!"><i class="fa-solid fa-compress-alt"></i></a></li>
+                        <li><a href="#!" onclick="addToCart('${post._id}', '${post.name}', ${post.price}, '${getImageUrlCart(post.image)}')">
+                            <i class="fa-solid fa-shopping-basket"></i>
+                        </a></li>
+                        <li><a href="#!"><i class="fa-solid fa-heart"></i></a></li>
+                    </ul>
+                </div>
+                <div class="product-info">
+                    <h2 class="product__title">${post.name}</h2>
+                    <span class="">Available: <span class="${post.stock == 'In Stock' ? 'green' : 'red'}">${post.stock}</span></span>
+                    <h4 class="product__price"><span class="new">${post.price} Rs</span></h4>
+                    <p class="product-description">${post.description}</p>
+                </div>
+            </li>`).join('');
+            
+
+    } catch (error) {
+        console.error("Error fetching data:", error);
+    }
+}
+
+        
+            fetchSanityData();
+
+
+            function addToCart(productId, name, price, image) {
+    console.log("Adding to cart:", { productId, name, price, image }); 
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    let existingProduct = cart.find(item => item.id === productId);
+
+    if (existingProduct) {
+        existingProduct.quantity += 1;
+    } else {
+        cart.push({ id: productId, name, price, image, quantity: 1 });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartUI();
+}
+
+
+
+function updateCartUI() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let cartList = document.querySelector(".cart_items_list");
+    let totalPrice = 0;
+
+    if (cart.length === 0) {
+        cartList.innerHTML = `<p class="empty-cart">Your cart is empty.</p>`;
+        document.querySelector(".heading_title span").textContent = "0";
+        document.querySelector(".total_price span:last-child").textContent = "0 Rs";
+        return;
+    }
+
+    
+    cartList.innerHTML = cart
+    .map(item => {
+        totalPrice += item.price * item.quantity;
+        return `
+        <div class="cart_item">
+            <div class="item_image">
+                <img src="${item.image}" alt="${item.name}" >
+            </div>
+            <div class="item_content">
+                <h4 class="item_title">${item.name}</h4>
+                <span class="item_price">${item.price} Rs x ${item.quantity}</span>
+                <button type="button" class="remove_btn" onclick="removeFromCart('${item.id}')">
+                    <i class="fa-solid fa-times"></i>
+                </button>
+            </div>
+        </div>`;
+    })
+    .join("");
+
+
+    document.querySelector(".heading_title span").textContent = cart.length;
+    // document.querySelector(".heading_title span").src = cart.image;
+    document.querySelector(".total_price span:last-child").textContent = totalPrice.toFixed(2) + " Rs";
+}
+
+function removeFromCart(productId) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart = cart.filter(item => item.id !== productId);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartUI();
+}
+
+// Load cart UI on page load
+document.addEventListener("DOMContentLoaded", updateCartUI);
+
+        </script>
     </body>
 </html>
