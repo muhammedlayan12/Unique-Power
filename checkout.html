@@ -812,107 +812,6 @@ function removeFromCart(productId) {
     updateCartUI();
 }
 
-
-// document.addEventListener("DOMContentLoaded", function () {
-//     let checkoutTableBody = document.querySelector("#checkout-items");
-//     let totalPriceElement = document.querySelector("#total-price");
-//     let confirmOrderBtn = document.querySelector("#confirmOrderBtn");
-
-//     function displayCheckoutItems() {
-//         let orderItems = JSON.parse(localStorage.getItem("order")) || [];
-//         checkoutTableBody.innerHTML = "";
-
-//         if (orderItems.length === 0) {
-//             checkoutTableBody.innerHTML = `<tr><td colspan="6">No items in checkout.</td></tr>`;
-//             totalPriceElement.textContent = "0 Rs";
-//             return;
-//         }
-
-//         let totalAmount = 0;
-
-//         orderItems.forEach((item, index) => {
-//             let totalItemPrice = item.price * item.quantity;
-//             totalAmount += totalItemPrice;
-
-//             let row = document.createElement("tr");
-//             row.innerHTML = `
-//                 <td><img src="${item.image}" class="product-image" alt="${item.name}"></td>
-//                 <td>${item.name}</td>
-//                 <td>${item.price} Rs</td>
-//                 <td>
-//                     <input type="number" class="quantity-input" data-index="${index}" value="${item.quantity}" min="1">
-//                 </td>
-//                 <td class="total-item-price">${totalItemPrice.toFixed(2)} Rs</td>
-//                 <td><button class="remove-btn" data-index="${index}">❌</button></td>
-//             `;
-//             checkoutTableBody.appendChild(row);
-//         });
-
-//         totalPriceElement.textContent = `${totalAmount.toFixed(2)} Rs`;
-//         attachCheckoutEventListeners();
-//     }
-
-//     function attachCheckoutEventListeners() {
-//         document.querySelectorAll(".remove-btn").forEach(button => {
-//             button.addEventListener("click", function () {
-//                 let index = this.getAttribute("data-index");
-//                 removeCheckoutItem(index);
-//             });
-//         });
-
-//         document.querySelectorAll(".quantity-input").forEach(input => {
-//             input.addEventListener("change", function () {
-//                 let index = this.getAttribute("data-index");
-//                 let newQuantity = parseInt(this.value);
-//                 updateCheckoutQuantity(index, newQuantity);
-//             });
-//         });
-
-//         confirmOrderBtn.addEventListener("click", confirmOrder);
-//     }
-
-//     function removeCheckoutItem(index) {
-//         let orderItems = JSON.parse(localStorage.getItem("order")) || [];
-//         orderItems.splice(index, 1);
-//         localStorage.setItem("order", JSON.stringify(orderItems));
-//         displayCheckoutItems();
-//     }
-
-//     function updateCheckoutQuantity(index, quantity) {
-//         let orderItems = JSON.parse(localStorage.getItem("order")) || [];
-//         if (quantity < 1) return; 
-//         orderItems[index].quantity = quantity;
-//         localStorage.setItem("order", JSON.stringify(orderItems));
-//         displayCheckoutItems();
-//     }
-
-//     function confirmOrder() {
-//         let orderItems = JSON.parse(localStorage.getItem("order")) || [];
-//         if (orderItems.length === 0) {
-//             alert("Your checkout is empty!");
-//             return;
-//         }
-
-//         alert("Your order has been placed successfully!");
-//         localStorage.removeItem("order"); // Clear order after confirmation
-//         window.location.href = "order-confirmation.html"; // Redirect to confirmation page
-//     }
-
-//     displayCheckoutItems();
-// });
-
-
-
-import sanityClient from "@sanity/client";
-
-const client = sanityClient({
-  projectId: "yftyosth",
-  dataset: "production",
-  useCdn: false,
-  apiVersion: "2023-01-01",
-  token: "skdqx6yKv40RBVyiir52biOMPf129Bo78esITokTqLoGtxnwQ4OdOVhjrJUZFeZPVkaCDj55TDYrrHAzg00NHrblEF9fdrEcwl2nZHi4o81OCjRPKmupl2ACif0EyRsNSl3mIJqZDInTUzuVFjDFXlLhEQ3sDKcjNjPleh1ksghjhxl9sTYc",
-});
-
 document.addEventListener("DOMContentLoaded", function () {
     let checkoutTableBody = document.querySelector("#checkout-items");
     let totalPriceElement = document.querySelector("#total-price");
@@ -936,14 +835,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
             let row = document.createElement("tr");
             row.innerHTML = `
-                <td><img src="${item.image}" class="product-image" alt="${item.name}"></td>
-                <td>${item.name}</td>
-                <td>${item.price} Rs</td>
-                <td>
-                    <input type="number" class="quantity-input" data-index="${index}" value="${item.quantity}" min="1">
-                </td>
+                <td><img src="${item.image || 'default.jpg'}" alt="${item.name}" width="50" height="50"></td>
+                <td>${item.name || 'No Name'}</td>
+                <td>${item.quantity || 1}</td>
+                <td>${item.price.toFixed(2)} Rs</td>
                 <td class="total-item-price">${totalItemPrice.toFixed(2)} Rs</td>
-                <td><button class="remove-btn" data-index="${index}">❌</button></td>
             `;
             checkoutTableBody.appendChild(row);
         });
@@ -951,78 +847,72 @@ document.addEventListener("DOMContentLoaded", function () {
         totalPriceElement.textContent = `${totalAmount.toFixed(2)} Rs`;
     }
 
-    function attachCheckoutEventListeners() {
-        checkoutTableBody.addEventListener("click", function (event) {
-            if (event.target.classList.contains("remove-btn")) {
-                let index = event.target.getAttribute("data-index");
-                removeCheckoutItem(index);
-            }
-        });
-
-        checkoutTableBody.addEventListener("change", function (event) {
-            if (event.target.classList.contains("quantity-input")) {
-                let index = event.target.getAttribute("data-index");
-                let newQuantity = parseInt(event.target.value);
-                updateCheckoutQuantity(index, newQuantity);
-            }
-        });
-
-        confirmOrderBtn.addEventListener("click", confirmOrder);
-    }
-
-    function removeCheckoutItem(index) {
-        let orderItems = JSON.parse(localStorage.getItem("order")) || [];
-        orderItems.splice(index, 1);
-        localStorage.setItem("order", JSON.stringify(orderItems));
-        displayCheckoutItems();
-    }
-
-    function updateCheckoutQuantity(index, quantity) {
-        let orderItems = JSON.parse(localStorage.getItem("order")) || [];
-        if (quantity < 1) return; 
-        orderItems[index].quantity = quantity;
-        localStorage.setItem("order", JSON.stringify(orderItems));
-        displayCheckoutItems();
-    }
-
-    async function confirmOrder() {
+    confirmOrderBtn.addEventListener("click", async function () {
         let orderItems = JSON.parse(localStorage.getItem("order")) || [];
         if (orderItems.length === 0) {
             alert("Your checkout is empty!");
             return;
         }
 
-        let customerName = prompt("Enter your name:") || "Guest User";
-        let customerEmail = prompt("Enter your email:") || "guest@example.com";
+        let customerName = prompt("Enter your name:");
+        let phoneNumber = prompt("Enter your phone number:");
+        let email = prompt("Enter your email:");
 
-        const orderData = {
-            _type: "order",
+        if (!customerName || !phoneNumber || !email) {
+            alert("All details are required!");
+            return;
+        }
+
+    
+        
+
+
+        let orderData = {
+            _type: "orders",
             customerName,
-            customerEmail,
-            totalPrice: orderItems.reduce((sum, item) => sum + item.price * item.quantity, 0),
-            items: orderItems.map(item => ({
+            phone: phoneNumber,
+            email,
+            orderItems: orderItems.map(item => ({
                 _type: "orderItem",
-                name: item.name,
-                quantity: item.quantity,
-                price: item.price
+                name: item.name || "Unknown",
+                image: item.image || "default.jpg",
+                quantity: item.quantity || 1,
+                price: item.price || 0,
+                totalPrice: (item.price * item.quantity)|| 0
             })),
-            createdAt: new Date().toISOString(),
+            totalAmount: parseFloat(totalPriceElement.textContent),
+            orderDate: new Date().toISOString()
         };
 
         try {
-            let response = await client.create(orderData);
-            console.log("Order saved to Sanity:", response);
+            let response = await fetch("https://yftyosth.api.sanity.io/v2022-03-07/data/mutate/production", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer skdqx6yKv40RBVyiir52biOMPf129Bo78esITokTqLoGtxnwQ4OdOVhjrJUZFeZPVkaCDj55TDYrrHAzg00NHrblEF9fdrEcwl2nZHi4o81OCjRPKmupl2ACif0EyRsNSl3mIJqZDInTUzuVFjDFXlLhEQ3sDKcjNjPleh1ksghjhxl9sTYc"
+                },
+                body: JSON.stringify({
+                    mutations: [
+                        {
+                            create: orderData
+                        }
+                    ]
+                })
+            });
+
+            let result = await response.json();
+            console.log("Sanity Response:", result);
+
             alert("Your order has been placed successfully!");
             localStorage.removeItem("order");
             window.location.href = "order-confirmation.html";
         } catch (error) {
-            console.error("Failed to save order:", error);
-            alert("Error placing your order. Please try again.");
+            console.error("Error sending data to Sanity:", error);
+            alert("Failed to place order. Please try again.");
         }
-    }
+    });
 
     displayCheckoutItems();
-    attachCheckoutEventListeners();
 });
 
         </script>
