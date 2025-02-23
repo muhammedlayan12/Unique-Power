@@ -538,7 +538,7 @@
                             <span>View Cart</span>
                         </span>
                     </a></li>
-                    <li><a href="checkout.html" class="thm-btn thm-btn__black">
+                    <li><a href="checkout.html" onclick="checkout()" class="thm-btn thm-btn__black">
                         <span class="btn-wrap">
                             <span>Checkout</span>
                             <span>Checkout</span>
@@ -5334,6 +5334,19 @@ function removeFromCart(productId) {
 // Load cart UI on page load
 document.addEventListener("DOMContentLoaded", updateCartUI);
 
+// function checkout() {
+//     let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+//     if (cartItems.length === 0) {
+//         alert("Your cart is empty!");
+//         return;
+//     }
+
+//     localStorage.setItem("order", JSON.stringify(cartItems));
+//     localStorage.removeItem("cart");
+
+    
+//     window.location.href="checkout.html";
+// }
         </script>
         
     </body>
