@@ -30,68 +30,139 @@
             color: rgb(0, 107, 0);
         }
 
-        body {
-    font-family: Arial, sans-serif;
-    background: #f8f9fa;
-    margin: 0;
-    padding: 20px;
-}
-
+/* Cool, Responsive, and Awesome Checkout Page */
 .checkout-container {
-    max-width: 800px;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     margin: auto;
+    overflow-x: auto;
+    transition: all 0.3s ease-in-out;
 }
 
 h2, h3 {
     text-align: center;
     color: #0056b3;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 .checkout-table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    overflow: hidden;
 }
-.checkout-table th, .checkout-table td {
+
+.checkout-table th {
+    background: #0056b3;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.checkout-table td {
     border: 1px solid #ddd;
-    padding: 10px;
+    padding: 12px;
     text-align: center;
+    font-size: 15px;
 }
 
 .product-image {
     width: 60px;
     height: 60px;
     object-fit: cover;
-    border-radius: 5px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.product-image:hover {
+    transform: scale(1.1);
 }
 
 .checkout-summary {
     text-align: center;
-    font-size: 18px;
-    padding-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    padding-top: 15px;
 }
 
 .confirm-btn {
-    background: #ffc107;
-    color: black;
-    padding: 10px 20px;
-    font-size: 16px;
+    background: linear-gradient(135deg, #ffc107, #ff8c00);
+    color: white;
+    padding: 12px 24px;
+    font-size: 18px;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 8px;
+    width: 100%;
+    transition: background 0.3s ease, transform 0.2s;
+    font-weight: bold;
 }
 
 .confirm-btn:hover {
-    background: #e0a800;
+    background: linear-gradient(135deg, #e0a800, #ff6a00);
+    transform: translateY(-2px);
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .checkout-container {
+        padding: 15px;
+    }
+
+    .checkout-table thead {
+        display: none;
+    }
+
+    .checkout-table, .checkout-table tbody, .checkout-table tr, .checkout-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .checkout-table tr {
+        margin-bottom: 15px;
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 12px;
+        background: white;
+        border-radius: 8px;
+    }
+
+    .checkout-table td {
+        text-align: left;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        border: none;
+        font-size: 16px;
+    }
+
+    .checkout-table td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        text-transform: capitalize;
+        color: #0056b3;
+    }
+
+    .confirm-btn {
+        font-size: 16px;
+        padding: 12px;
+    }
+}
+
 
 
     </style>
     <body>
+    
+
         <div class="body_wrap">
             <!-- preloder start  -->
             <div class="preloder_part">
@@ -306,7 +377,7 @@ h2, h3 {
                                             <span>
                                                 <img src="assets/img/icon/hc_03.svg" alt="">
                                             </span>
-                                            solarCharger & Battries
+                                            Inverters & Battries
                                         </a>
                                     </li>
                                 </ul>
@@ -327,163 +398,166 @@ h2, h3 {
            
             
 
-         
              <!-- slide-bar start -->
-             <aside class="slide-bar">
-                <div class="close-mobile-menu">
-                    <a href="javascript:void(0);"><i class="fa-solid fa-times"></i></a>
+        <aside class="slide-bar">
+            <div class="close-mobile-menu">
+                <a href="javascript:void(0);"><i class="fa-solid fa-times"></i></a>
+            </div>
+
+            <!-- sidebar-info start -->
+            <div class="cart_sidebar">
+                <button type="button" class="cart_close_btn"><i class="fa-solid fa-times"></i></button>
+                <h2 class="heading_title text-uppercase">Cart Items - <span>4</span></h2>
+                <div class="cart_items_list">
+                    <div class="cart_item">
+                        <div class="item_image">
+                            <img src="assets/img/product/img_01.png" alt="image_not_found">
+                        </div>
+                        <div class="item_content">
+                            <h4 class="item_title">
+                                Rorem ipsum dolor sit amet.
+                            </h4>
+                            <span class="item_price">$19.00</span>
+                            <button type="button" class="remove_btn"><i class="fa-solid fa-times"></i></button>
+                        </div>
+                    </div>
+                    <div class="cart_item">
+                        <div class="item_image">
+                            <img src="assets/img/product/img_02.png" alt="image_not_found">
+                        </div>
+                        <div class="item_content">
+                            <h4 class="item_title">
+                                Rorem ipsum dolor sit amet.
+                            </h4>
+                            <span class="item_price">$22.00</span>
+                            <button type="button" class="remove_btn"><i class="fa-solid fa-times"></i></button>
+                        </div>
+                    </div>
+                    <div class="cart_item">
+                        <div class="item_image">
+                            <img src="assets/img/product/img_03.png" alt="image_not_found">
+                        </div>
+                        <div class="item_content">
+                            <h4 class="item_title">
+                                Rorem ipsum dolor sit amet.
+                            </h4>
+                            <span class="item_price">$43.00</span>
+                            <button type="button" class="remove_btn"><i class="fa-solid fa-times"></i></button>
+                        </div>
+                    </div>
+                    <div class="cart_item">
+                        <div class="item_image">
+                            <img src="assets/img/product/img_04.png" alt="image_not_found">
+                        </div>
+                        <div class="item_content">
+                            <h4 class="item_title">
+                                Rorem ipsum dolor sit amet.
+                            </h4>
+                            <span class="item_price">$14.00</span>
+                            <button type="button" class="remove_btn"><i class="fa-solid fa-times"></i></button>
+                        </div>
+                    </div>
                 </div>
-    
-                <!-- sidebar-info start -->
-                <div class="cart_sidebar">
-                    <button type="button" class="cart_close_btn"><i class="fa-solid fa-times"></i></button>
-                    <h2 class="heading_title text-uppercase">Cart Items - <span>4</span></h2>
-                    <div class="cart_items_list">
-                        <div class="cart_item">
-                            <div class="item_image">
-                                <img src="assets/img/product/img_01.png" alt="image_not_found">
-                            </div>
-                            <div class="item_content">
-                                <h4 class="item_title">
-                                    Rorem ipsum dolor sit amet.
-                                </h4>
-                                <span class="item_price">$19.00</span>
-                                <button type="button" class="remove_btn"><i class="fa-solid fa-times"></i></button>
-                            </div>
-                        </div>
-                        <div class="cart_item">
-                            <div class="item_image">
-                                <img src="assets/img/product/img_02.png" alt="image_not_found">
-                            </div>
-                            <div class="item_content">
-                                <h4 class="item_title">
-                                    Rorem ipsum dolor sit amet.
-                                </h4>
-                                <span class="item_price">$22.00</span>
-                                <button type="button" class="remove_btn"><i class="fa-solid fa-times"></i></button>
-                            </div>
-                        </div>
-                        <div class="cart_item">
-                            <div class="item_image">
-                                <img src="assets/img/product/img_03.png" alt="image_not_found">
-                            </div>
-                            <div class="item_content">
-                                <h4 class="item_title">
-                                    Rorem ipsum dolor sit amet.
-                                </h4>
-                                <span class="item_price">$43.00</span>
-                                <button type="button" class="remove_btn"><i class="fa-solid fa-times"></i></button>
-                            </div>
-                        </div>
-                        <div class="cart_item">
-                            <div class="item_image">
-                                <img src="assets/img/product/img_04.png" alt="image_not_found">
-                            </div>
-                            <div class="item_content">
-                                <h4 class="item_title">
-                                    Rorem ipsum dolor sit amet.
-                                </h4>
-                                <span class="item_price">$14.00</span>
-                                <button type="button" class="remove_btn"><i class="fa-solid fa-times"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="total_price text-uppercase">
-                        <span>Sub Total:</span>
-                        <span>$87.00</span>
-                    </div>
-                    <ul class="btns_group ul_li">
-                        <li><a href="cart.html" class="thm-btn">
-                            <span class="btn-wrap">
-                                <span>View Cart</span>
-                                <span>View Cart</span>
-                            </span>
-                        </a></li>
-                        <li><a href="checkout.html" class="thm-btn thm-btn__black">
-                            <span class="btn-wrap">
-                                <span>Checkout</span>
-                                <span>Checkout</span>
-                            </span>
-                        </a></li>
-                    </ul>
+                <div class="total_price text-uppercase">
+                    <span>Sub Total:</span>
+                    <span>$87.00</span>
                 </div>
-                <!-- sidebar-info end -->
-    
-                <!-- side-mobile-menu start -->
-                <nav class="side-mobile-menu">
-                    <div class="header-mobile-search">
-                        <form role="search" method="get" action="#">
-                            <input type="text" placeholder="Search Keywords">
-                            <button type="submit"><i class="ti-search"></i></button>
-                        </form>
-                    </div>
-                    <ul id="mobile-menu-active">
-                        <li ><a href="index.html">Home</a>
-                            
-                        </li>
-                        <li class="dropdown">
-                            <a href="#">Shop</a>
-                            <ul class="sub-menu">
-                                <li><a href="solarpanel.html">Solar Panles</a></li>
-                                <li><a href="charger.html">Battery Chargers</a></li>
-                                <li><a href="solarinverter.html">Solar Inverters</a></li>
-                                <li><a href="solarCharger.html">Solar Chargers</a></li>
-                                <li><a href="battery.html">Battery</a></li>
-                                <li><a href="ups.html">UPS</a></li>
-                            </ul>
-                        </li>
-                        <!-- <li><a href="shop.html">Accesories</a></li>
-                        <li class="dropdown">
-                            <a href="#!">Blog</a>
-                            <ul class="sub-menu">
-                                <li><a href="news.html">Blog</a></li>
-                                <li><a href="news-single.html">Blog Details</a></li>
-                            </ul>
-                        </li> -->
-                        <li >
-                            <a href="about.html">About</a>
-                            
-                        </li>
-                        <li >
+                <ul class="btns_group ul_li">
+                    <li><a href="cart.html" class="thm-btn">
+                        <span class="btn-wrap">
+                            <span>View Cart</span>
+                            <span>View Cart</span>
+                        </span>
+                    </a></li>
+                    <li><a href="#"  class="thm-btn thm-btn__black">
+                        <span class="btn-wrap">
+                            <span onclick="checkout()">Checkout</span>
+                            <span onclick="checkout()">Checkout</span>
+                        </span>
+                    </a></li>
+                </ul>
+            </div>
+            <!-- sidebar-info end -->
+
+            <!-- side-mobile-menu start -->
+            <nav class="side-mobile-menu">
+                <div class="header-mobile-search">
+                    <form role="search" method="get" action="#">
+                        <input type="text" placeholder="Search Keywords">
+                        <button type="submit"><i class="ti-search"></i></button>
+                    </form>
+                </div>
+                <ul id="mobile-menu-active">
+                    <li ><a href="index.html">Home</a>
+                        
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Shop</a>
+                        <ul class="sub-menu">
+                            <li><a href="solarpanel.html">Solar Panles</a></li>
+                            <li><a href="charger.html">Battery Chargers</a></li>
+                            <li><a href="solarinverter.html">Solar Inverters</a></li>
+                            <li><a href="solarCharger.html">Solar Chargers</a></li>
+                            <li><a href="battery.html">Battery</a></li>
+                            <li><a href="ups.html">UPS</a></li>
+                        </ul>
+                    </li>
+                    <!-- <li><a href="shop.html">Accesories</a></li>
+                    <li class="dropdown">
+                        <a href="#!">Blog</a>
+                        <ul class="sub-menu">
+                            <li><a href="news.html">Blog</a></li>
+                            <li><a href="news-single.html">Blog Details</a></li>
+                        </ul>
+                    </li> -->
+                    <li >
+                        <a href="about.html">About</a>
+                        
+                    </li>
+                    <li >
                         <a href="accessories.html">Accessories</a>
                         
                     </li><li><a href="cart.html">Cart</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </nav>
-                <!-- side-mobile-menu end -->
-            </aside>
-            <div class="body-overlay"></div>
-            <!-- slide-bar end -->
-           
-            <div class="checkout-container">
-                <h2>Checkout Page</h2>
-        
-                <table class="checkout-table">
-                    <thead>
-                        <tr>
-                            <th>Product</th>
-                            <th>Name</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
-                            <th>Total</th>
-                            <th>Remove</th>
-                        </tr>
-                    </thead>
-                    <tbody id="checkout-items">
-                        <!-- Items will be dynamically inserted here -->
-                    </tbody>
-                </table>
-        
-                <div class="checkout-summary">
-                    <h3>Order Summary</h3>
-                    <p>Total Amount: <strong id="total-price">0 Rs</strong></p>
-                    <button id="confirmOrderBtn" class="confirm-btn">Confirm Order</button>
-                </div>
-            </div>   
+                    
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <!-- side-mobile-menu end -->
+        </aside>
+        <div class="body-overlay"></div>
+        <!-- slide-bar end -->
+
+        <h2>Checkout</h2>
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="checkout-items"></tbody>
+        </table>
+    
+        <h3>Total Price: <span id="total-price">0 Rs</span></h3>
+    
+        <label for="payment-method">Select Payment Method:</label>
+        <select id="payment-method">
+            <option value="Cash on Delivery">Cash on Delivery</option>
+            <option value="Easypaisa">Easypaisa</option>
+            <option value="JazzCash">JazzCash</option>
+        </select>
+    
+        <p id="payment-message" style="display: none;"></p>
+    
+        <button id="confirmOrderBtn">Confirm Order</button>
             
-          <!-- footer start -->
-          <footer class="footer" data-background="assets/img/bg/footer_bg.jpg">
+
+         <!-- footer start -->
+         <footer class="footer" data-background="assets/img/bg/footer_bg.jpg">
             <div class="newslater newslater__border pt-30 pb-30">
                 <div class="container">
                     <div class="newslater__two ul_li">
@@ -506,7 +580,7 @@ h2, h3 {
                         <div class="footer__widget col-lg-3 col-md-6 mt-40">
                             <div class="footer__logo mb-20">
                                 <a href="index.html">
-                                    <img src="assets/img/product/LOGO1.png" alt="">
+                                    <img src="assets/img/product/LOGO1.png" alt="logo unique power">
                                 </a>
                             </div>
                             <p>V74H+Q4W Bin Qasim Town, Karachi</p>
@@ -543,7 +617,7 @@ h2, h3 {
                                     <a href="#!">Chargers</a>
                                 </li>
                                 <li>
-                                    <a href="#!">Solar ups</a>
+                                    <a href="#!">Solar Inverters</a>
                                 </li>
                                 <li>
                                     <a href="#!">MPT Solar Controller</a>
@@ -633,65 +707,94 @@ h2, h3 {
             </div>
         </footer>
         <!-- footer end -->
-            <!-- start newsletter-popup-area-section -->
-            <section class="newsletter-popup-area-section">
-                <div class="newsletter-popup-area">
-                    <div class="newsletter-popup-ineer">
-                        <button class="btn newsletter-close-btn">
-                            <i class="fa-solid fa-times"></i>
-                        </button>
-                        <div class="img-holder">
-                            <img src="assets/img/bg/newsletter.jpg" alt>
-                        </div>
-                        <div class="details">
-                            <h4>Get 45% discount shipped to your inbox</h4>
-                            <p>Subscribe to the radios eCommerce newsletter to receive timely updates to your favorite products</p>
-                            <form>
-                                <div>
-                                    <input type="email" placeholder="Enter your email"/>
-                                    <button type="submit">Subscribe</button>
-                                </div>
-                                <div>
-                                    <label class="checkbox-holder">
-                                        Don't show this popup again!
-                                    <input type="checkbox" class="show-message">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                            </form>
-                        </div>
+        <!-- start newsletter-popup-area-section -->
+        <section class="newsletter-popup-area-section">
+            <div class="newsletter-popup-area">
+                <div class="newsletter-popup-ineer">
+                    <button class="btn newsletter-close-btn">
+                        <i class="fa-solid fa-times"></i>
+                    </button>
+                    <div class="img-holder">
+                        <img src="assets/img/bg/newsletter.jpg" alt>
+                    </div>
+                    <div class="details">
+                        <h4>Get 45% discount shipped to your inbox</h4>
+                        <p>Subscribe to the radios eCommerce newsletter to receive timely updates to your favorite products</p>
+                        <form>
+                            <div>
+                                <input type="email" placeholder="Enter your email"/>
+                                <button type="submit">Subscribe</button>
+                            </div>
+                            <div>
+                                <label class="checkbox-holder">
+                                    Don't show this popup again!
+                                <input type="checkbox" class="show-message">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </form>
                     </div>
                 </div>
-            </section>
-            <!-- end newsletter-popup-area-section -->
-            <!-- start cookies-area -->
-            <div class="cookies-area">
-                <p>
-                    This website uses cookies to improve your experience. By using this website you agree to our <a href="#">Data Protection Policy</a>
-                    . 
-                </p>
-                <a href="#" class="read-more">Read more</a>
-                <div>
-                    <button class="cookie-btn">Accept</button>
-                </div>
             </div>
-            <!-- end cookies-area -->
+        </section>
+        <!-- end newsletter-popup-area-section -->
+        <!-- start cookies-area -->
+        <div class="cookies-area">
+            <p>
+                This website uses cookies to improve your experience. By using this website you agree to our <a href="#">Data Protection Policy</a>
+                . 
+            </p>
+            <a href="#" class="read-more">Read more</a>
+            <div>
+                <button class="cookie-btn">Accept</button>
+            </div>
         </div>
-        <!-- jquery include -->
-        <script src="assets/js/jquery-3.5.1.min.js"></script>
-        <script src="assets/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/js/slick.js"></script>
-        <script src="assets/js/backToTop.js"></script>
-        <script src="assets/js/uikit.min.js"></script>
-        <script src="assets/js/resize-sensor.min.js"></script>
-        <script src="assets/js/theia-sticky-sidebar.min.js"></script>
-        <script src="assets/js/wow.min.js"></script>
-        <script src="assets/js/jqueryui.js"></script>
-        <script src="assets/js/touchspin.js"></script>
-        <script src="assets/js/countdown.js"></script>
-        <script src="assets/js/jquery.magnific-popup.min.js"></script>
-        <script src="assets/js/metisMenu.min.js"></script>
-        <script src="assets/js/main.js"></script>
+        <!-- end cookies-area -->
+    </div>
+    <!-- jquery include -->
+    <script src="assets/js/jquery-3.5.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/slick.js"></script>
+    <script src="assets/js/backToTop.js"></script>
+    <script src="assets/js/uikit.min.js"></script>
+    <script src="assets/js/resize-sensor.min.js"></script>
+    <script src="assets/js/theia-sticky-sidebar.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/jqueryui.js"></script>
+    <script src="assets/js/touchspin.js"></script>
+    <script src="assets/js/countdown.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/metisMenu.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+slidesPerView: 4, // Default
+spaceBetween: 10,
+loop: true,
+navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+},
+pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+},
+breakpoints: {
+    1024: {
+        slidesPerView: 4, 
+    },
+    768: {
+        slidesPerView: 2,
+    },
+    480: {
+        slidesPerView: 1, 
+    },
+},
+});
+
+      </script>
+     
         
         <script>
             const projectId = "yftyosth"; 
@@ -812,24 +915,26 @@ function removeFromCart(productId) {
     updateCartUI();
 }
 
+ 
 document.addEventListener("DOMContentLoaded", function () {
     let checkoutTableBody = document.querySelector("#checkout-items");
     let totalPriceElement = document.querySelector("#total-price");
     let confirmOrderBtn = document.querySelector("#confirmOrderBtn");
+    let paymentMethodSelect = document.querySelector("#payment-method");
+    let paymentMessage = document.querySelector("#payment-message");
 
     function displayCheckoutItems() {
         let orderItems = JSON.parse(localStorage.getItem("order")) || [];
         checkoutTableBody.innerHTML = "";
 
         if (orderItems.length === 0) {
-            checkoutTableBody.innerHTML = `<tr><td colspan="6">No items in checkout.</td></tr>`;
+            checkoutTableBody.innerHTML = `<tr><td colspan="5">No items in checkout.</td></tr>`;
             totalPriceElement.textContent = "0 Rs";
             return;
         }
 
         let totalAmount = 0;
-
-        orderItems.forEach((item, index) => {
+        orderItems.forEach((item) => {
             let totalItemPrice = item.price * item.quantity;
             totalAmount += totalItemPrice;
 
@@ -847,6 +952,35 @@ document.addEventListener("DOMContentLoaded", function () {
         totalPriceElement.textContent = `${totalAmount.toFixed(2)} Rs`;
     }
 
+    paymentMethodSelect.addEventListener("change", function () {
+        if (this.value === "Easypaisa" || this.value === "JazzCash") {
+            paymentMessage.style.display = "block";
+            paymentMessage.textContent = "Send payment SS on this WhatsApp: 4324236784632";
+        } else {
+            paymentMessage.style.display = "none";
+        }
+    });
+
+    async function uploadImageToSanity(imageFile) {
+        let formData = new FormData();
+        formData.append("file", imageFile);
+        formData.append("dataset", "production");
+        formData.append("token", "skdqx6yKv40RBVyiir52biOMPf129Bo78esITokTqLoGtxnwQ4OdOVhjrJUZFeZPVkaCDj55TDYrrHAzg00NHrblEF9fdrEcwl2nZHi4o81OCjRPKmupl2ACif0EyRsNSl3mIJqZDInTUzuVFjDFXlLhEQ3sDKcjNjPleh1ksghjhxl9sTYc");
+
+        try {
+            let response = await fetch(`https://api.sanity.io/v1/assets/images/${projectId}/production`, {
+                method: "POST",
+                body: formData,
+            });
+
+            let result = await response.json();
+            return result.url;
+        } catch (error) {
+            console.error("Image Upload Error:", error);
+            return null;
+        }
+    }
+
     confirmOrderBtn.addEventListener("click", async function () {
         let orderItems = JSON.parse(localStorage.getItem("order")) || [];
         if (orderItems.length === 0) {
@@ -857,28 +991,36 @@ document.addEventListener("DOMContentLoaded", function () {
         let customerName = prompt("Enter your name:");
         let phoneNumber = prompt("Enter your phone number:");
         let email = prompt("Enter your email:");
+        let paymentMethod = paymentMethodSelect.value;
 
         if (!customerName || !phoneNumber || !email) {
             alert("All details are required!");
             return;
         }
 
-    
-        
-
+        let uploadedImages = await Promise.all(
+            orderItems.map(async (item) => {
+                if (item.imageFile) {
+                    let uploadedUrl = await uploadImageToSanity(item.imageFile);
+                    return { ...item, image: uploadedUrl || item.image };
+                }
+                return item;
+            })
+        );
 
         let orderData = {
-            _type: "orders",
+            _type: "orderss",
             customerName,
             phone: phoneNumber,
             email,
-            orderItems: orderItems.map(item => ({
+            paymentMethod,
+            orderItems: uploadedImages.map(item => ({
                 _type: "orderItem",
                 name: item.name || "Unknown",
                 image: item.image || "default.jpg",
                 quantity: item.quantity || 1,
                 price: item.price || 0,
-                totalPrice: (item.price * item.quantity)|| 0
+                totalPrice: (item.price * item.quantity) || 0
             })),
             totalAmount: parseFloat(totalPriceElement.textContent),
             orderDate: new Date().toISOString()
@@ -891,17 +1033,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     "Content-Type": "application/json",
                     "Authorization": "Bearer skdqx6yKv40RBVyiir52biOMPf129Bo78esITokTqLoGtxnwQ4OdOVhjrJUZFeZPVkaCDj55TDYrrHAzg00NHrblEF9fdrEcwl2nZHi4o81OCjRPKmupl2ACif0EyRsNSl3mIJqZDInTUzuVFjDFXlLhEQ3sDKcjNjPleh1ksghjhxl9sTYc"
                 },
-                body: JSON.stringify({
-                    mutations: [
-                        {
-                            create: orderData
-                        }
-                    ]
-                })
+                body: JSON.stringify({ mutations: [{ create: orderData }] })
             });
 
             let result = await response.json();
-            console.log("Sanity Response:", result);
+            console.log("Sanity Order Response:", result);
 
             alert("Your order has been placed successfully!");
             localStorage.removeItem("order");
@@ -914,6 +1050,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     displayCheckoutItems();
 });
+
+
 
         </script>
     </body>

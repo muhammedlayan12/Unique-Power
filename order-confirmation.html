@@ -6,7 +6,7 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Unique Power - Solar Inverter</title>
+        <title>Unique Power -Solar Inverter</title>
         <link rel="shortcut icon" href="assets/img/favicon.png" type="images/x-icon"/>
         <!-- css include -->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -21,247 +21,310 @@
 
         <link rel="stylesheet" href="assets/css/magnific-popup.css">
         <link rel="stylesheet" href="assets/css/main.css">
-    </head>
-    <body>
-        <div class="body_wrap">
-            <!-- preloder start  -->
-            <div class="preloder_part">
-                <div class="spinner">
-                    <div class="dot1"></div>
-                    <div class="dot2"></div>
+
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+ 
+
+.confirmation-container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 450px;
+}
+
+.icon {
+    font-size: 60px;
+    color: #28a745;
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin: 10px 0;
+    color: #333;
+}
+
+p {
+    color: #666;
+    font-size: 16px;
+}
+
+.order-details {
+    background: #f1f1f1;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.order-details p {
+    margin: 5px 0;
+}
+
+.btn {
+    display: inline-block;
+    background: #0056b3;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #004494;
+}
+
+</style>
+<body>
+
+    <div class="body_wrap">
+        <!-- preloder start  -->
+        <div class="preloder_part">
+            <div class="spinner">
+                <div class="dot1"></div>
+                <div class="dot2"></div>
+            </div>
+        </div>
+        <!-- preloder end  -->
+        <!-- back to top start -->
+        <div class="progress-wrap">
+            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+            </svg>
+        </div>
+        <!-- back to top end -->
+        <!-- header start -->
+        <header class="header header__style-one">
+            <div class="header__top-info-wrap d-none d-lg-block">
+                <div class="container">
+                    <div class="header__top-info ul_li_between mt-none-10">
+                        <ul class="ul_li mt-10">
+                            <li>
+                                <i class="fa-solid fa-map-marker-alt"></i>
+                                Store Location
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-truck"></i>
+                                Track Your Order
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-phone"></i>
+                                Call Us For Enquiry
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-heart"></i>
+                                Welcome to Unique Power. We provides Best Electronics item
+                            </li>
+                        </ul>
+                        <div class="header__top-right ul_li mt-10">
+                            <div class="date">
+                                <i class="fa-solid fa-calendar-alt"></i>
+                                Friday, July 27, 2020
+                        
+                            </div>
+                            <div class="header__social ml-25">
+                                <a href="#!">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <!-- <a href="#!">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#!">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#!">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                                <a href="#!">
+                                    <i class="fab fa-pinterest"></i>
+                                </a> -->
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!-- preloder end  -->
-            <!-- back to top start -->
-            <div class="progress-wrap">
-                <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-                    <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
-                </svg>
-            </div>
-            <!-- back to top end -->
-   
-            <!-- header start -->
-            <header class="header header__style-one">
-                <div class="header__top-info-wrap d-none d-lg-block">
-                    <div class="container">
-                        <div class="header__top-info ul_li_between mt-none-10">
-                            <ul class="ul_li mt-10">
+            <div class="container">
+                <div class="header__middle ul_li_between justify-content-xs-center">
+                    <div class="header__logo">
+                        <a href="index.html">
+                            <img src="assets/img/product/LOGO1.png" alt="">
+                        </a>
+                    </div>
+                    <form class="header__search-box" action="#">
+                        <div class="select-box">
+                            <select id="category" name="category">
+                                <option value="">All Categories</option>
+                                <option value="4">Summer collections</option>
+                                <option value="5">Breakfast & Dairy</option>
+                                <option value="6">Beverage & Drinks</option>
+                                <option value="7">Cocolate Box</option>
+                                <option value="8">Dried Food Corner</option>
+                                <option value="9">Frozen Foods</option>
+                                <option value="10">Baby Food Corner</option>
+                                <option value="11">Milk & Juices</option>
+                                <option value="12">Organic & Snacks</option>
+                            </select>
+                        </div>
+                        <input type="text" name="search" id="search" placeholder="Search For Products" required/>
+                        <button type="submit">
+                            <i class="fa-solid fa-search"></i>
+                        </button>
+                    </form>
+                    <div class="header__lang ul_li">
+                        <div class="header__language mr-15">
+                            <ul>
                                 <li>
-                                    <i class="fa-solid fa-map-marker-alt"></i>
-                                    Store Location
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-truck"></i>
-                                    Track Your Order
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-phone"></i>
-                                    Call Us For Enquiry
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-heart"></i>
-                                    Welcome to Unique Power. We provides Best Electronics item
+                                    <a href="#!" class="lang-btn">
+                                        USD <i class="fa-solid fa-chevron-down"></i>
+                                    </a>
+                                    <ul class="lang_sub_list">
+                                        <li>
+                                            <a href="#">USD</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">BDT</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">EUR</a>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
-                            <div class="header__top-right ul_li mt-10">
-                                <div class="date">
-                                    <i class="fa-solid fa-calendar-alt"></i>
-                                    Friday, July 27, 2020
-                            
-                                </div>
-                                <div class="header__social ml-25">
-                                    <a href="#!">
-                                        <i class="fab fa-facebook-f"></i>
+                        </div>
+                        <div class="header__language">
+                            <ul>
+                                <li>
+                                    <a href="#!" class="lang-btn">
+                                        <img src="assets/img/icon/usd_flag.png" alt="">
+                                        English <i class="fa-solid fa-chevron-down"></i>
                                     </a>
-                                    <!-- <a href="#!">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                    <a href="#!">
-                                        <i class="fab fa-instagram"></i>
-                                    </a>
-                                    <a href="#!">
-                                        <i class="fab fa-youtube"></i>
-                                    </a>
-                                    <a href="#!">
-                                        <i class="fab fa-pinterest"></i>
-                                    </a> -->
-                                </div>
-                            </div>
+                                    <ul class="lang_sub_list">
+                                        <li>
+                                            <a href="#">English</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Arabic</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Bangla</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                </div>
-                <div class="container">
-                    <div class="header__middle ul_li_between justify-content-xs-center">
-                        <div class="header__logo">
-                            <a href="index.html">
-                                <img src="assets/img/product/LOGO1.png" alt="">
+                    <div class="header__icons ul_li">
+                        <div class="icon">
+                            <a href="#!">
+                                <img src="assets/img/icon/user.svg" alt="">
                             </a>
                         </div>
-                        <form class="header__search-box" action="#">
-                            <div class="select-box">
-                                <select id="category" name="category">
-                                    <option value="">All Categories</option>
-                                    <option value="4">Summer collections</option>
-                                    <option value="5">Breakfast & Dairy</option>
-                                    <option value="6">Beverage & Drinks</option>
-                                    <option value="7">Cocolate Box</option>
-                                    <option value="8">Dried Food Corner</option>
-                                    <option value="9">Frozen Foods</option>
-                                    <option value="10">Baby Food Corner</option>
-                                    <option value="11">Milk & Juices</option>
-                                    <option value="12">Organic & Snacks</option>
-                                </select>
-                            </div>
-                            <input type="text" name="search" id="search" placeholder="Search For Products" required/>
-                            <button type="submit">
-                                <i class="fa-solid fa-search"></i>
-                            </button>
-                        </form>
-                        <div class="header__lang ul_li">
-                            <div class="header__language mr-15">
-                                <ul>
-                                    <li>
-                                        <a href="#!" class="lang-btn">
-                                            USD <i class="fa-solid fa-chevron-down"></i>
-                                        </a>
-                                        <ul class="lang_sub_list">
-                                            <li>
-                                                <a href="#">USD</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">BDT</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">EUR</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="header__language">
-                                <ul>
-                                    <li>
-                                        <a href="#!" class="lang-btn">
-                                            <img src="assets/img/icon/usd_flag.png" alt="">
-                                            English <i class="fa-solid fa-chevron-down"></i>
-                                        </a>
-                                        <ul class="lang_sub_list">
-                                            <li>
-                                                <a href="#">English</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Arabic</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Bangla</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="header__icons ul_li">
-                            <div class="icon">
-                                <a href="#!">
-                                    <img src="assets/img/icon/user.svg" alt="">
-                                </a>
-                            </div>
-                            <div class="icon wishlist-icon">
-                                <a href="#!">
-                                    <img src="assets/img/icon/heart.svg" alt="">
-                                    <span class="count">0</span>
-                                </a>
-                            </div>
-                            <div class="cart_btn icon">
-                                <img src="assets/img/icon/shopping_bag.svg" alt="">
+                        <div class="icon wishlist-icon">
+                            <a href="#!">
+                                <img src="assets/img/icon/heart.svg" alt="">
                                 <span class="count">0</span>
-                            </div>
+                            </a>
+                        </div>
+                        <div class="cart_btn icon">
+                            <img src="assets/img/icon/shopping_bag.svg" alt="">
+                            <span class="count">0</span>
                         </div>
                     </div>
                 </div>
-                <div class="header__cat-wrap" data-uk-sticky="top: 250; animation: uk-animation-slide-top;">
-                    <div class="container">
-                        <div class="header__wrap ul_li_between">
-                            <div class="header__cat ul_li">
-                                <div class="hamburger_menu">
-                                    <a href="javascript:void(0);" class="active">
-                                        <div class="icon bar">
-                                            <span>
-                                                <i class="fa-solid fa-bars"></i>
-                                            </span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <ul class="category ul_li">
-                                    <!-- <li>
-                                        <a href="#!">
-                                            <span>
-                                                <img src="assets/img/icon/hc_01.svg" alt="">
-                                            </span>
-                                            Laptops & Computers
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#!">
-                                            <span>
-                                                <img src="assets/img/icon/hc_02.svg" alt="">
-                                            </span>
-                                            CC Tv & Camera
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#!">
-                                            <span>
-                                                <img src="assets/img/icon/hc_03.svg" alt="">
-                                            </span>
-                                            Home Equipment
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#!">
-                                            <span>
-                                                <img src="assets/img/icon/hc_04.svg" alt="">
-                                            </span>
-                                            Tv & Audios
-                                        </a>
-                                    </li> -->
-                                    <li>
-                                        <a href="#!">
-                                            <span>
-                                                <img src="assets/img/icon/hc_05.svg" alt="">
-                                            </span>
-                                            Solar & Equipemnts
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#!">
-                                            <span>
-                                                <img src="assets/img/icon/hc_03.svg" alt="">
-                                            </span>
-                                            Inverters & Battries
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                                <!-- <div class="login-sign-btn">
-                                    <a class="thm-btn" href="account.html">
-                                        <span class="btn-wrap">
-                                            <span>Login / Sign Up</span>
-                                            <span>Login / Sign Up</span>
+            </div>
+            <div class="header__cat-wrap" data-uk-sticky="top: 250; animation: uk-animation-slide-top;">
+                <div class="container">
+                    <div class="header__wrap ul_li_between">
+                        <div class="header__cat ul_li">
+                            <div class="hamburger_menu">
+                                <a href="javascript:void(0);" class="active">
+                                    <div class="icon bar">
+                                        <span>
+                                            <i class="fa-solid fa-bars"></i>
                                         </span>
+                                    </div>
+                                </a>
+                            </div>
+                            <ul class="category ul_li">
+                                <!-- <li>
+                                    <a href="#!">
+                                        <span>
+                                            <img src="assets/img/icon/hc_01.svg" alt="">
+                                        </span>
+                                        Laptops & Computers
                                     </a>
-                                </div> -->
+                                </li>
+                                <li>
+                                    <a href="#!">
+                                        <span>
+                                            <img src="assets/img/icon/hc_02.svg" alt="">
+                                        </span>
+                                        CC Tv & Camera
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#!">
+                                        <span>
+                                            <img src="assets/img/icon/hc_03.svg" alt="">
+                                        </span>
+                                        Home Equipment
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#!">
+                                        <span>
+                                            <img src="assets/img/icon/hc_04.svg" alt="">
+                                        </span>
+                                        Tv & Audios
+                                    </a>
+                                </li> -->
+                                <li>
+                                    <a href="#!">
+                                        <span>
+                                            <img src="assets/img/icon/hc_05.svg" alt="">
+                                        </span>
+                                        Solar & Equipemnts
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#!">
+                                        <span>
+                                            <img src="assets/img/icon/hc_03.svg" alt="">
+                                        </span>
+                                        solarCharger & Battries
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
+                            <!-- <div class="login-sign-btn">
+                                <a class="thm-btn" href="account.html">
+                                    <span class="btn-wrap">
+                                        <span>Login / Sign Up</span>
+                                        <span>Login / Sign Up</span>
+                                    </span>
+                                </a>
+                            </div> -->
                     </div>
                 </div>
-            </header>
-            <!-- header end -->
-           
-            
+            </div>
+        </header>
+        <!-- header end -->
+       
+        
 
-          
-             <!-- slide-bar start -->
-        <aside class="slide-bar">
+     
+         <!-- slide-bar start -->
+         <aside class="slide-bar">
             <div class="close-mobile-menu">
                 <a href="javascript:void(0);"><i class="fa-solid fa-times"></i></a>
             </div>
@@ -334,7 +397,7 @@
                     <li><a href="checkout.html" class="thm-btn thm-btn__black">
                         <span class="btn-wrap">
                             <span onclick="checkout()">Checkout</span>
-                            <span onclick="checkout()">Checkout</span>
+                        <span onclick="checkout()">Checkout</span>
                         </span>
                     </a></li>
                 </ul>
@@ -377,9 +440,9 @@
                         
                     </li>
                     <li >
-                        <a href="accessories.html">Accessories</a>
-                        
-                    </li><li><a href="cart.html">Cart</a></li>
+                    <a href="accessories.html">Accessories</a>
+                    
+                </li><li><a href="cart.html">Cart</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
@@ -387,83 +450,31 @@
         </aside>
         <div class="body-overlay"></div>
         <!-- slide-bar end -->
-            
+    
 
-            
-        <main>
-            <!-- breadcrumb start -->
-            <section class="breadcrumb-area">
-                <div class="container">
-                    <div class="radios-breadcrumb breadcrumbs">
-                        <ul class="list-unstyled d-flex align-items-center">
-                            <li class="radiosbcrumb-item radiosbcrumb-begin">
-                                <a href="index.html"><span>Home</span></a>
-                            </li>
-                            <li class="radiosbcrumb-item radiosbcrumb-end">
-                                <span>About Unique Power</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-            <!-- breadcrumb end -->
-        
-            <!-- about start -->
-            <section class="about">
-                <div class="container">
-                    <div class="row g-0 align-items-center">
-                        <div class="col-xl-6 col-lg-6">
-                            <div class="about__img">
-                                <img src="https://cdn.britannica.com/94/192794-050-3F3F3DDD/panels-electricity-order-sunlight.jpg" alt="Solar Panels">
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6">
-                            <div class="about__content pl-70">
-                                <h2>Powering a Sustainable Future with Unique Power</h2>
-                                <p>At Unique Power, we specialize in high-quality solar panels, inverters, UPS systems, and other advanced electronic solutions. Our mission is to provide sustainable and efficient energy solutions for homes and businesses.</p>
-                                <div class="row mt-6">
-                                    <div class="col-lg-6 mt-30">
-                                        <div class="about__info-box d-flex">
-                                            <span class="icon"><img src="data:image/jpeg;base64,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" alt="Solar Icon"></span>
-                                            <div class="content">
-                                                <h4>Solar Energy Solutions</h4>
-                                                <p>High-efficiency solar panels designed to maximize energy output.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 mt-30">
-                                        <div class="about__info-box d-flex">
-                                            <span class="icon"><img src="https://s.alicdn.com/@sc04/kf/H71bdce334e1a45d9b362041fb8cb51d3V.jpg_720x720q50.jpg" alt="Inverter Icon"></span>
-                                            <div class="content">
-                                                <h4>Reliable Inverters & UPS</h4>
-                                                <p>Backup power solutions ensuring uninterrupted electricity supply.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <ul class="about__list list-unstyled mt-25">
-                                    <li>Eco-friendly and cost-effective energy solutions.</li>
-                                    <li>Advanced technology for maximum efficiency.</li>
-                                </ul>
-                                <div class="about__btn mt-30">
-                                    <a class="thm-btn thm-btn__2" href="#services">
-                                        <span class="btn-wrap">
-                                            <span>Discover More</span>
-                                            <span>Discover More</span>
-                                        </span>
-                                        <i class="fa-solid fa-long-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- about end -->
-        </main>
+    <div class="confirmation-container">
+        <i class="fa-solid fa-circle-check icon"></i>
+        <h2>Order Placed Successfully!</h2>
+        <p>Thank you for your purchase. Your order has been placed successfully.</p>
+
+        <!-- <div class="order-details">
+            <p><strong>Order ID:</strong> <span id="order-id"></span></p>
+            <p><strong>Items:</strong> 3 Products</p>
+            <p><strong>Total Price:</strong> $79.99</p>
+            <p><strong>Estimated Delivery:</strong> 3-5 Business Days</p>
+        </div> -->
+
+        <a href="index.html" class="btn">Go to Homepage</a>
+    </div>
+
+    <script>
+        // Generate a random order ID
+        document.getElementById("order-id").innerText = "ORD-" + Math.floor(Math.random() * 1000000);
+    </script>
 
 
-            
+
+
             <!-- footer start -->
             <footer class="footer" data-background="assets/img/bg/footer_bg.jpg">
                 <div class="newslater newslater__border pt-30 pb-30">

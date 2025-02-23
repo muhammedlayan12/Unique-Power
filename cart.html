@@ -340,8 +340,8 @@
                         </a></li>
                         <li><a href="checkout.html" class="thm-btn thm-btn__black">
                             <span class="btn-wrap">
-                                <span>Checkout</span>
-                                <span>Checkout</span>
+                                <span onclick="checkout()">Checkout</span>
+                            <span onclick="checkout()">Checkout</span>
                             </span>
                         </a></li>
                     </ul>
@@ -1212,5 +1212,22 @@ loadCartItems();
     });
     </script>
     
-</body>
+<script>
+            function checkout() {
+    let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+    if (cartItems.length === 0) {
+        alert("Your cart is empty!");
+        return;
+    }
+
+    localStorage.setItem("order", JSON.stringify(cartItems));
+    localStorage.removeItem("cart");
+
+    
+    window.location.href="checkout.html";
+}
+        </script>
+        
+    </body>
 </html>
+
