@@ -30,370 +30,128 @@
             color: rgb(0, 107, 0);
         }
     </style>
-    <body>
-        <div class="body_wrap">
-            <!-- preloder start  -->
-            <div class="preloder_part">
-                <div class="spinner">
-                    <div class="dot1"></div>
-                    <div class="dot2"></div>
-                </div>
+  <body>
+    <div class="body_wrap">
+        <!-- preloder start  -->
+        <div class="preloder_part">
+            <div class="spinner">
+                <div class="dot1"></div>
+                <div class="dot2"></div>
             </div>
-            <!-- preloder end  -->
-            <!-- back to top start -->
-            <div class="progress-wrap">
-                <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-                    <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
-                </svg>
-            </div>
-            <!-- back to top end -->
-            <!-- header start -->
-            <header class="header header__style-one">
-                <div class="header__top-info-wrap d-none d-lg-block">
-                    <div class="container">
-                        <div class="header__top-info ul_li_between mt-none-10">
-                            <ul class="ul_li mt-10">
-                                <li>
-                                    <i class="fa-solid fa-map-marker-alt"></i>
-                                    Store Location
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-truck"></i>
-                                    Track Your Order
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-phone"></i>
-                                    Call Us For Enquiry
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-heart"></i>
-                                    Welcome to Unique Power. We provides Best Electronics item
-                                </li>
-                            </ul>
-                            <div class="header__top-right ul_li mt-10">
-                                <div class="date">
-                                    <i class="fa-solid fa-calendar-alt"></i>
-                                    Friday, July 27, 2020
-                            
-                                </div>
-                                <div class="header__social ml-25">
-                                    <a href="#!">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                    <!-- <a href="#!">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                    <a href="#!">
-                                        <i class="fab fa-instagram"></i>
-                                    </a>
-                                    <a href="#!">
-                                        <i class="fab fa-youtube"></i>
-                                    </a>
-                                    <a href="#!">
-                                        <i class="fab fa-pinterest"></i>
-                                    </a> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="header__middle ul_li_between justify-content-xs-center">
-                        <div class="header__logo">
-                            <a href="index.html">
-                                <img src="assets/img/product/LOGO1.png" alt="">
-                            </a>
-                        </div>
-                        <form class="header__search-box" action="#">
-                            <div class="select-box">
-                                <select id="category" name="category">
-                                    <option value="">All Categories</option>
-                                    <option value="4">Summer collections</option>
-                                    <option value="5">Breakfast & Dairy</option>
-                                    <option value="6">Beverage & Drinks</option>
-                                    <option value="7">Cocolate Box</option>
-                                    <option value="8">Dried Food Corner</option>
-                                    <option value="9">Frozen Foods</option>
-                                    <option value="10">Baby Food Corner</option>
-                                    <option value="11">Milk & Juices</option>
-                                    <option value="12">Organic & Snacks</option>
-                                </select>
-                            </div>
-                            <input type="text" name="search" id="search" placeholder="Search For Products" required/>
-                            <button type="submit">
-                                <i class="fa-solid fa-search"></i>
-                            </button>
-                        </form>
-                        <div class="header__lang ul_li">
-                            <div class="header__language mr-15">
-                                <ul>
-                                    <li>
-                                        <a href="#!" class="lang-btn">
-                                            USD <i class="fa-solid fa-chevron-down"></i>
-                                        </a>
-                                        <ul class="lang_sub_list">
-                                            <li>
-                                                <a href="#">USD</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">BDT</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">EUR</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="header__language">
-                                <ul>
-                                    <li>
-                                        <a href="#!" class="lang-btn">
-                                            <img src="assets/img/icon/usd_flag.png" alt="">
-                                            English <i class="fa-solid fa-chevron-down"></i>
-                                        </a>
-                                        <ul class="lang_sub_list">
-                                            <li>
-                                                <a href="#">English</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Arabic</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Bangla</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="header__icons ul_li">
-                            <div class="icon">
-                                <a href="#!">
-                                    <img src="assets/img/icon/user.svg" alt="">
-                                </a>
-                            </div>
-                            <div class="icon wishlist-icon">
-                                <a href="#!">
-                                    <img src="assets/img/icon/heart.svg" alt="">
-                                    <span class="count">0</span>
-                                </a>
-                            </div>
-                            <div class="cart_btn icon">
-                                <img src="assets/img/icon/shopping_bag.svg" alt="">
-                                <span class="count">0</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="header__cat-wrap" data-uk-sticky="top: 250; animation: uk-animation-slide-top;">
-                    <div class="container">
-                        <div class="header__wrap ul_li_between">
-                            <div class="header__cat ul_li">
-                                <div class="hamburger_menu">
-                                    <a href="javascript:void(0);" class="active">
-                                        <div class="icon bar">
-                                            <span>
-                                                <i class="fa-solid fa-bars"></i>
-                                            </span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <ul class="category ul_li">
-                                    <!-- <li>
-                                        <a href="#!">
-                                            <span>
-                                                <img src="assets/img/icon/hc_01.svg" alt="">
-                                            </span>
-                                            Laptops & Computers
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#!">
-                                            <span>
-                                                <img src="assets/img/icon/hc_02.svg" alt="">
-                                            </span>
-                                            CC Tv & Camera
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#!">
-                                            <span>
-                                                <img src="assets/img/icon/hc_03.svg" alt="">
-                                            </span>
-                                            Home Equipment
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#!">
-                                            <span>
-                                                <img src="assets/img/icon/hc_04.svg" alt="">
-                                            </span>
-                                            Tv & Audios
-                                        </a>
-                                    </li> -->
-                                    <li>
-                                        <a href="#!">
-                                            <span>
-                                                <img src="assets/img/icon/hc_05.svg" alt="">
-                                            </span>
-                                            Solar & Equipemnts
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#!">
-                                            <span>
-                                                <img src="assets/img/icon/hc_03.svg" alt="">
-                                            </span>
-                                            solarCharger & Battries
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                                <!-- <div class="login-sign-btn">
-                                    <a class="thm-btn" href="account.html">
-                                        <span class="btn-wrap">
-                                            <span>Login / Sign Up</span>
-                                            <span>Login / Sign Up</span>
-                                        </span>
-                                    </a>
-                                </div> -->
-                        </div>
-                    </div>
-                </div>
-            </header>
-            <!-- header end -->
-           
-            
+        </div>
+        <!-- preloder end  -->
+        <!-- back to top start -->
+        <div class="progress-wrap">
+            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+            </svg>
+        </div>
+        <!-- back to top end -->
+    
+        <!-- Cart Sidebar -->
+<div class="cart_sidebar">
+<div class="cart_header">
+    <h3 class="heading_title">Cart (<span>0</span>)</h3>
+    <button class="close_cart" onclick="toggleCart()">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+</div>
 
-         
-             <!-- slide-bar start -->
-             <aside class="slide-bar">
-                <div class="close-mobile-menu">
-                    <a href="javascript:void(0);"><i class="fa-solid fa-times"></i></a>
-                </div>
-    
-                <!-- sidebar-info start -->
-                <div class="cart_sidebar">
-                    <button type="button" class="cart_close_btn"><i class="fa-solid fa-times"></i></button>
-                    <h2 class="heading_title text-uppercase">Cart Items - <span>4</span></h2>
-                    <div class="cart_items_list">
-                        <div class="cart_item">
-                            <div class="item_image">
-                                <img src="assets/img/product/img_01.png" alt="image_not_found">
-                            </div>
-                            <div class="item_content">
-                                <h4 class="item_title">
-                                    Rorem ipsum dolor sit amet.
-                                </h4>
-                                <span class="item_price">$19.00</span>
-                                <button type="button" class="remove_btn"><i class="fa-solid fa-times"></i></button>
-                            </div>
-                        </div>
-                        <div class="cart_item">
-                            <div class="item_image">
-                                <img src="assets/img/product/img_02.png" alt="image_not_found">
-                            </div>
-                            <div class="item_content">
-                                <h4 class="item_title">
-                                    Rorem ipsum dolor sit amet.
-                                </h4>
-                                <span class="item_price">$22.00</span>
-                                <button type="button" class="remove_btn"><i class="fa-solid fa-times"></i></button>
-                            </div>
-                        </div>
-                        <div class="cart_item">
-                            <div class="item_image">
-                                <img src="assets/img/product/img_03.png" alt="image_not_found">
-                            </div>
-                            <div class="item_content">
-                                <h4 class="item_title">
-                                    Rorem ipsum dolor sit amet.
-                                </h4>
-                                <span class="item_price">$43.00</span>
-                                <button type="button" class="remove_btn"><i class="fa-solid fa-times"></i></button>
-                            </div>
-                        </div>
-                        <div class="cart_item">
-                            <div class="item_image">
-                                <img src="assets/img/product/img_04.png" alt="image_not_found">
-                            </div>
-                            <div class="item_content">
-                                <h4 class="item_title">
-                                    Rorem ipsum dolor sit amet.
-                                </h4>
-                                <span class="item_price">$14.00</span>
-                                <button type="button" class="remove_btn"><i class="fa-solid fa-times"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="total_price text-uppercase">
-                        <span>Sub Total:</span>
-                        <span>$87.00</span>
-                    </div>
-                    <ul class="btns_group ul_li">
-                        <li><a href="cart.html" class="thm-btn">
-                            <span class="btn-wrap">
-                                <span>View Cart</span>
-                                <span>View Cart</span>
-                            </span>
-                        </a></li>
-                        <li><a href="checkout.html" class="thm-btn thm-btn__black">
-                            <span class="btn-wrap">
-                                <span onclick="checkout()">Checkout</span>
-                            <span onclick="checkout()">Checkout</span>
-                            </span>
-                        </a></li>
+<div class="cart_items_list"></div>
+
+<div class="cart_footer">
+    <div class="total_price">
+        <span>Total:</span>
+        <span>0 Rs</span>
+    </div>
+    <button class="checkout_btn" onclick="checkout()">Checkout</button>
+</div>
+</div>
+
+<!-- Cart Sidebar -->
+<div class="cart_sidebar">
+<div class="cart_header">
+    <h3 class="heading_title">Cart (<span>0</span>)</h3>
+    <button class="close_cart" onclick="toggleCart()">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+</div>
+
+<div class="cart_items_list"></div>
+
+<div class="cart_footer">
+    <div class="total_price">
+        <span>Total:</span>
+        <span>0 Rs</span>
+    </div>
+    <button class="checkout_btn">Checkout</button>
+</div>
+</div>
+
+<!-- Overlay to Close Cart -->
+<div class="cart_overlay" onclick="toggleCart()"></div>
+
+<!-- Cart Icon to Open Sidebar -->
+
+
+
+        <nav class="navbar">
+            <div class="humburger" onclick="openSideMenu()">Menu</div>
+            <div class="logo">
+                <img src="./assets/img/product/LOGO1.png" alt="unique power logo" width="150">
+            </div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li class="fdfssss">
+                    <a href="#">Shop <i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="ulssss">
+                        <li><a href="solarpanel.html">Solar Panels</a></li>
+                        <li><a href="charger.html">Chargers</a></li>
+                        <li><a href="battery.html">Batteries</a></li>
+                        <li><a href="solarinverter.html">Inverter</a></li>
+                        <li><a href="ups.html">UPS</a></li>
                     </ul>
-                </div>
-                <!-- sidebar-info end -->
+                </li>
+                
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="accessories.html">Accessories</a></li>
+            </ul>
+            <div class="socialIcons">
+                <i class="fa-solid fa-search"></i>
+                <i class="fa-solid fa-shopping-cart" onclick="toggleCart()"></i>
+            </div>
+        </nav>
     
-                <!-- side-mobile-menu start -->
-                <nav class="side-mobile-menu">
-                    <div class="header-mobile-search">
-                        <form role="search" method="get" action="#">
-                            <input type="text" placeholder="Search Keywords">
-                            <button type="submit"><i class="ti-search"></i></button>
-                        </form>
-                    </div>
-                    <ul id="mobile-menu-active">
-                        <li ><a href="index.html">Home</a>
-                            
-                        </li>
-                        <li class="dropdown">
-                            <a href="#">Shop</a>
-                            <ul class="sub-menu">
-                                <li><a href="solarpanel.html">Solar Panles</a></li>
-                                <li><a href="charger.html">Battery Chargers</a></li>
-                                <li><a href="solarinverter.html">Solar Inverters</a></li>
-                                <li><a href="solarCharger.html">Solar Chargers</a></li>
-                                <li><a href="battery.html">Battery</a></li>
-                                <li><a href="ups.html">UPS</a></li>
-                            </ul>
-                        </li>
-                        <!-- <li><a href="shop.html">Accesories</a></li>
-                        <li class="dropdown">
-                            <a href="#!">Blog</a>
-                            <ul class="sub-menu">
-                                <li><a href="news.html">Blog</a></li>
-                                <li><a href="news-single.html">Blog Details</a></li>
-                            </ul>
-                        </li> -->
-                        <li >
-                            <a href="about.html">About</a>
-                            
-                        </li>
-                        <li >
-                        <a href="accessories.html">Accessories</a>
-                        
-                    </li><li><a href="cart.html">Cart</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </nav>
-                <!-- side-mobile-menu end -->
-            </aside>
-            <div class="body-overlay"></div>
-            <!-- slide-bar end -->
+    
+        <div class="sideMenuNav" id="sideMenu">
+            <div class="cut" onclick="cutSideMenu()">X</div>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li>
+                    <a href="#" class="haha">Shop <i class="fa-solid fa-chevron-down"></i></a>
+                    <ol class="hahaha">
+                        <li><a href="solarpanel.html">Solar Panels</a></li>
+                        <li><a href="charger.html">Chargers</a></li>
+                        <li><a href="battery.html">Batteries</a></li>
+                        <li><a href="solarinverter.html">Inverter</a></li>
+                        <li><a href="ups.html">UPS</a></li>
+                    </ol>
+                </li>
+                
+                <li><a href="about.html">About</a></li>
+                <li><a href="accessories.html">Accessories</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="socialIconsSideMenu">
+                <i class="fa-solid fa-search"></i>
+                <i class="fa-solid fa-shopping-cart" onclick="toggleCart()"></i>
+            </div>
+        </div>
+        
+    <div class="body-overlaysssssssss" id="body-overlaysssssssss"></div>
+    <!-- slide-bar end -->
+
            
             <main>
             
@@ -900,9 +658,9 @@
     }
     return `https://cdn.sanity.io/images/${projectId}/${dataset}/${image.asset._ref.replace('image-', '').replace('-jpg', '.jpg').replace('-png', '.png')}`;
 }
-
+    
             async function fetchSanityData() {
-    const query = encodeURIComponent('*[_type=="ups"]{_id,name,price,description,stock,image}');
+    const query = encodeURIComponent('*[_type=="ups"]{_id,name,price,description,hoverImage,stock,image}');
     const url = `https://${projectId}.api.sanity.io/v2021-06-07/data/query/${dataset}?query=${query}`;
 
     try {
@@ -911,24 +669,24 @@
 
         document.getElementById("ups").innerHTML = result
             .map(post => `
-            <li class="product">
-                <div class="product-holder">
-                    <img src="${getImageUrl(post.image)}" alt="${post.name}">
-                    <ul class="product__action">
-                        <li><a href="#!"><i class="fa-solid fa-compress-alt"></i></a></li>
-                        <li><a href="#!" onclick="addToCart('${post._id}', '${post.name}', ${post.price}, '${getImageUrlCart(post.image)}')">
-                            <i class="fa-solid fa-shopping-basket"></i>
-                        </a></li>
-                        <li><a href="#!"><i class="fa-solid fa-heart"></i></a></li>
-                    </ul>
-                </div>
-                <div class="product-info">
-                    <h2 class="product__title">${post.name}</h2>
-                    <span class="">Available: <span class="${post.stock == 'In Stock' ? 'green' : 'red'}">${post.stock}</span></span>
-                    <h4 class="product__price"><span class="new">${post.price} Rs</span></h4>
-                    <p class="product-description">${post.description}</p>
-                </div>
-            </li>`).join('');
+            <li class="productsss">
+    <div class="productsss-holder">
+        <img class="default-img" src="${getImageUrl(post.image)}" alt="${post.name}">
+        <img class="hover-img" src="${getImageUrl(post.hoverImage)}" alt="${post.name}">
+        <ul class="product__action">
+            <li><a href="#!"><i class="fa-solid fa-compress-alt"></i></a></li>
+        </ul>
+        <button class="add-to-cart-btn" onclick="addToCart('${post._id}', '${post.name}', ${post.price}, '${getImageUrlCart(post.image)}')">
+            Add to Cart
+        </button>
+    </div>
+    <div class="product-info">
+        <h2 class="product__title">${post.name}</h2>
+        <span>Available: <span class="${post.stock == 'In Stock' ? 'green' : 'red'}">${post.stock}</span></span>
+        <h4 class="product__price"><span class="new">${post.price} Rs</span></h4>
+        <p class="product-description">${post.description}</p>
+    </div>
+</li>`).join('');
             
 
     } catch (error) {

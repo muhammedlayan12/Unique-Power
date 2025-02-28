@@ -911,3 +911,73 @@
 
 
 
+
+document.querySelector(".haha").addEventListener("click", function (event) {
+    event.preventDefault(); // Prevents page refresh
+    document.querySelector(".hahaha").classList.toggle("show");
+});
+
+
+
+
+function updateCartUI() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let cartList = document.querySelector(".cart_items_list");
+    let totalPrice = 0;
+
+    if (cart.length === 0) {
+        cartList.innerHTML = `<p class="empty-cart">Your cart is empty.</p>`;
+        document.querySelector(".heading_title span").textContent = "0";
+        document.querySelector(".total_price span:last-child").textContent = "0 Rs";
+        return;
+    }
+
+    cartList.innerHTML = cart
+        .map(item => {
+            totalPrice += item.price * item.quantity;
+            return `
+            <div class="cart_item">
+                <div class="item_image">
+                    <img src="${item.image}" alt="${item.name}">
+                </div>
+                <div class="item_content">
+                    <h4 class="item_title">${item.name}</h4>
+                    <span class="item_price">${item.price} Rs x ${item.quantity}</span>
+                    <button type="button" class="remove_btn" onclick="removeFromCart('${item.id}')">
+                        <i class="fa-solid fa-times"></i>
+                    </button>
+                </div>
+            </div>`;
+        })
+        .join("");
+
+    document.querySelector(".heading_title span").textContent = cart.length;
+    document.querySelector(".total_price span:last-child").textContent = totalPrice.toFixed(2) + " Rs";
+}
+
+
+function openSideMenu(){
+    let sideMenu = document.getElementById("sideMenu");
+    let overlay = document.getElementById("body-overlaysssssssss");
+    sideMenu.style.left="0";
+    overlay.style.display="block";
+}
+
+
+function cutSideMenu(){
+    let sideMenu = document.getElementById("sideMenu");
+    let overlay = document.getElementById("body-overlaysssssssss");
+    sideMenu.style.left="-100%";
+    overlay.style.display="none";
+}
+
+$(document).ready(function(){
+		$(".wish-icon i").click(function(){
+			$(this).toggleClass("fa-heart fa-heart-o");
+		});
+	});
+
+    function toggleCart() {
+    document.querySelector(".cart_sidebar").classList.toggle("open");
+    document.querySelector(".cart_overlay").classList.toggle("show");
+}
